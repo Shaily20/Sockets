@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const server = require('http').createServer(app);
-const io = require('socket.io').listen(server);
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 let port = 5000 || process.env.PORT;
 let users = [];
